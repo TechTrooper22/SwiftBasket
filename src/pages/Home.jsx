@@ -130,8 +130,9 @@ const Home = () => {
 
             <div className="banner">
               <img
-                src="https://i.ibb.co/Jnzd8bp/mid-baer.jpg"
+                src="https://img.freepik.com/premium-vector/special-offer-announcement-sale-banner-template_419341-1900.jpg"
                 alt="Special Deals"
+                width={"100%"}
               />
             </div>
 

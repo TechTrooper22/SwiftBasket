@@ -49,13 +49,16 @@ const Register = () => {
         <div className="register-left">
           <h2>Signup</h2>
           <p>Sign up for a free account at SwiftBasket</p>
-          <img src="https://i.ibb.co/Qj1StVY/signup-image.png" alt="Sign Up" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/8662/8662284.png"
+            alt="Sign Up"
+          />
         </div>
-        
+
         <div className="register-right">
           <form onSubmit={handleSubmit}>
             {error && <div className="error-message">{error}</div>}
-            
+
             <div className="form-group">
               <input
                 type="text"
@@ -66,7 +69,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             <div className="form-group">
               <input
                 type="email"
@@ -77,7 +80,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             <div className="form-group">
               <input
                 type="password"
@@ -88,7 +91,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             <div className="form-group">
               <input
                 type="password"
@@ -99,15 +102,17 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             <p className="register-terms">
-              By signing up, you agree to SwiftBasket's <Link to="/terms">Terms of Use</Link> and <Link to="/privacy">Privacy Policy</Link>.
+              By signing up, you agree to SwiftBasket's{" "}
+              <Link to="/terms">Terms of Use</Link> and{" "}
+              <Link to="/privacy">Privacy Policy</Link>.
             </p>
-            
+
             <button type="submit" className="register-btn" disabled={loading}>
-              {loading ? 'Creating Account...' : 'Sign Up'}
+              {loading ? "Creating Account..." : "Sign Up"}
             </button>
-            
+
             <p className="login-link">
               Already have an account? <Link to="/login">Login</Link>
             </p>

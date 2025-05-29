@@ -41,13 +41,16 @@ const Login = () => {
         <div className="login-left">
           <h2>Login</h2>
           <p>Get access to your Orders, Wishlist and Recommendations</p>
-          <img src="https://i.ibb.co/Qj1StVY/login-image.png" alt="Login" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/8662/8662284.png"
+            alt="Login"
+          />
         </div>
-        
+
         <div className="login-right">
           <form onSubmit={handleSubmit}>
             {error && <div className="error-message">{error}</div>}
-            
+
             <div className="form-group">
               <input
                 type="email"
@@ -58,7 +61,7 @@ const Login = () => {
                 required
               />
             </div>
-            
+
             <div className="form-group">
               <input
                 type="password"
@@ -69,30 +72,34 @@ const Login = () => {
                 required
               />
             </div>
-            
+
             <p className="login-terms">
-              By continuing, you agree to SwiftBasket's <Link to="/terms">Terms of Use</Link> and <Link to="/privacy">Privacy Policy</Link>.
+              By continuing, you agree to SwiftBasket's{" "}
+              <Link to="/terms">Terms of Use</Link> and{" "}
+              <Link to="/privacy">Privacy Policy</Link>.
             </p>
-            
+
             <button type="submit" className="login-btn" disabled={loading}>
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? "Logging in..." : "Login"}
             </button>
-            
+
             <div className="login-divider">
               <span>OR</span>
             </div>
-            
+
             <button type="button" className="otp-btn">
               Request OTP
             </button>
-            
+
             <p className="create-account-link">
               New to SwiftBasket? <Link to="/register">Create an account</Link>
             </p>
           </form>
-          
+
           <div className="demo-credentials">
-            <p><strong>Demo Credentials:</strong></p>
+            <p>
+              <strong>Demo Credentials:</strong>
+            </p>
             <p>Email: user@example.com</p>
             <p>Password: password</p>
           </div>

@@ -1,67 +1,68 @@
-import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import './Profile.css';
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
+import "./Profile.css";
 
 const Profile = () => {
   const { currentUser, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState('profile');
-  
+  const [activeTab, setActiveTab] = useState("profile");
+
   // Mock order data
   const orders = [
     {
-      id: 'OD123456789',
-      date: '15 Jun, 2023',
+      id: "OD123456789",
+      date: "15 Jun, 2023",
       total: 12999,
-      status: 'Delivered',
+      status: "Delivered",
       items: [
         {
-          name: 'Boat Rockerz 550 Bluetooth Headphone',
+          name: "Boat Rockerz 550 Bluetooth Headphone",
           price: 1799,
           quantity: 1,
-          image: 'https://i.ibb.co/Qm9Nh9F/boat-headphones.jpg'
-        }
-      ]
+          image:
+            "https://th.bing.com/th/id/OIP.E21hnv7m9gMeZShB3A_JVwHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        },
+      ],
     },
     {
-      id: 'OD987654321',
-      date: '10 May, 2023',
+      id: "OD987654321",
+      date: "10 May, 2023",
       total: 59999,
-      status: 'Delivered',
+      status: "Delivered",
       items: [
         {
-          name: 'Apple iPhone 13 (128GB) - Midnight',
+          name: "Apple iPhone 13 (128GB) - Midnight",
           price: 59999,
           quantity: 1,
-          image: 'https://i.ibb.co/5jnXDv7/iphone13.jpg'
-        }
-      ]
-    }
+          image: "https://i.ibb.co/5jnXDv7/iphone13.jpg",
+        },
+      ],
+    },
   ];
-  
+
   // Mock address data
   const addresses = [
     {
       id: 1,
-      name: 'John Doe',
-      phone: '9876543210',
-      address: '123, ABC Apartments, XYZ Street',
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      pincode: '400001',
-      isDefault: true
+      name: "Tejas Shrikhande",
+      phone: "9307696212",
+      address: "123, ABC Apartments, XYZ Street",
+      city: "Mumbai",
+      state: "Maharashtra",
+      pincode: "400001",
+      isDefault: true,
     },
     {
       id: 2,
-      name: 'John Doe',
-      phone: '9876543210',
-      address: '456, PQR Villas, MNO Road',
-      city: 'Bangalore',
-      state: 'Karnataka',
-      pincode: '560001',
-      isDefault: false
-    }
+      name: "Yadnyesh Shrikhande",
+      phone: "9876543210",
+      address: "456, PQR Villas, MNO Road",
+      city: "Bangalore",
+      state: "Karnataka",
+      pincode: "560001",
+      isDefault: false,
+    },
   ];
-  
+
   return (
     <div className="profile-page container">
       <div className="profile-container">
@@ -75,93 +76,109 @@ const Profile = () => {
               <p>{currentUser.name}</p>
             </div>
           </div>
-          
+
           <div className="profile-tabs">
-            <button 
-              className={`profile-tab ${activeTab === 'profile' ? 'active' : ''}`}
-              onClick={() => setActiveTab('profile')}
+            <button
+              className={`profile-tab ${
+                activeTab === "profile" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("profile")}
             >
               <i className="fas fa-user"></i>
               <span>My Profile</span>
             </button>
-            
-            <button 
-              className={`profile-tab ${activeTab === 'orders' ? 'active' : ''}`}
-              onClick={() => setActiveTab('orders')}
+
+            <button
+              className={`profile-tab ${
+                activeTab === "orders" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("orders")}
             >
               <i className="fas fa-box"></i>
               <span>My Orders</span>
             </button>
-            
-            <button 
-              className={`profile-tab ${activeTab === 'addresses' ? 'active' : ''}`}
-              onClick={() => setActiveTab('addresses')}
+
+            <button
+              className={`profile-tab ${
+                activeTab === "addresses" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("addresses")}
             >
               <i className="fas fa-map-marker-alt"></i>
               <span>My Addresses</span>
             </button>
-            
-            <button 
-              className={`profile-tab ${activeTab === 'wishlist' ? 'active' : ''}`}
-              onClick={() => setActiveTab('wishlist')}
+
+            <button
+              className={`profile-tab ${
+                activeTab === "wishlist" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("wishlist")}
             >
               <i className="fas fa-heart"></i>
               <span>My Wishlist</span>
             </button>
-            
-            <button 
-              className="profile-tab"
-              onClick={logout}
-            >
+
+            <button className="profile-tab" onClick={logout}>
               <i className="fas fa-sign-out-alt"></i>
               <span>Logout</span>
             </button>
           </div>
         </div>
-        
+
         <div className="profile-content">
-          {activeTab === 'profile' && (
+          {activeTab === "profile" && (
             <div className="profile-details">
               <h2>Personal Information</h2>
-              
+
               <form className="profile-form">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Full Name</label>
-                    <input type="text" id="name" defaultValue={currentUser.name} />
+                    <input
+                      type="text"
+                      id="name"
+                      defaultValue={currentUser.name}
+                    />
                   </div>
-                  
+
                   <div className="form-group">
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" defaultValue={currentUser.email} readOnly />
+                    <input
+                      type="email"
+                      id="email"
+                      defaultValue={currentUser.email}
+                      readOnly
+                    />
                   </div>
                 </div>
-                
+
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="phone">Phone Number</label>
-                    <input type="tel" id="phone" defaultValue="9876543210" />
+                    <input type="tel" id="phone" defaultValue="9307696212" />
                   </div>
-                  
+
                   <div className="form-group">
                     <label htmlFor="gender">Gender</label>
                     <select id="gender" defaultValue="">
-                      <option value="" disabled>Select Gender</option>
+                      <option value="" disabled>
+                        Select Gender
+                      </option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
-                
+
                 <button type="submit" className="save-btn">
                   Save Changes
                 </button>
               </form>
-              
+
               <div className="profile-section">
                 <h2>Email Preferences</h2>
-                
+
                 <div className="preference-item">
                   <div>
                     <h3>Order Updates</h3>
@@ -172,7 +189,7 @@ const Profile = () => {
                     <span className="slider"></span>
                   </label>
                 </div>
-                
+
                 <div className="preference-item">
                   <div>
                     <h3>Promotions and Offers</h3>
@@ -183,7 +200,7 @@ const Profile = () => {
                     <span className="slider"></span>
                   </label>
                 </div>
-                
+
                 <div className="preference-item">
                   <div>
                     <h3>Product Recommendations</h3>
@@ -197,14 +214,14 @@ const Profile = () => {
               </div>
             </div>
           )}
-          
-          {activeTab === 'orders' && (
+
+          {activeTab === "orders" && (
             <div className="orders-section">
               <h2>My Orders</h2>
-              
+
               {orders.length > 0 ? (
                 <div className="orders-list">
-                  {orders.map(order => (
+                  {orders.map((order) => (
                     <div className="order-card" key={order.id}>
                       <div className="order-header">
                         <div>
@@ -212,12 +229,14 @@ const Profile = () => {
                           <p>Placed on {order.date}</p>
                         </div>
                         <div className="order-status">
-                          <span className={`status-badge ${order.status.toLowerCase()}`}>
+                          <span
+                            className={`status-badge ${order.status.toLowerCase()}`}
+                          >
                             {order.status}
                           </span>
                         </div>
                       </div>
-                      
+
                       <div className="order-items-list">
                         {order.items.map((item, index) => (
                           <div className="order-item" key={index}>
@@ -232,15 +251,19 @@ const Profile = () => {
                           </div>
                         ))}
                       </div>
-                      
+
                       <div className="order-footer">
                         <div className="order-total">
                           <span>Total:</span>
                           <span>₹{order.total.toLocaleString()}</span>
                         </div>
                         <div className="order-actions">
-                          <button className="btn-view-details">View Details</button>
-                          <button className="btn-track-order">Track Order</button>
+                          <button className="btn-view-details">
+                            View Details
+                          </button>
+                          <button className="btn-track-order">
+                            Track Order
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -255,31 +278,42 @@ const Profile = () => {
               )}
             </div>
           )}
-          
-          {activeTab === 'addresses' && (
+
+          {activeTab === "addresses" && (
             <div className="addresses-section">
               <h2>My Addresses</h2>
-              
+
               <div className="addresses-list">
-                {addresses.map(address => (
-                  <div className={`address-card ${address.isDefault ? 'default' : ''}`} key={address.id}>
-                    {address.isDefault && <span className="default-badge">Default</span>}
-                    
+                {addresses.map((address) => (
+                  <div
+                    className={`address-card ${
+                      address.isDefault ? "default" : ""
+                    }`}
+                    key={address.id}
+                  >
+                    {address.isDefault && (
+                      <span className="default-badge">Default</span>
+                    )}
+
                     <h3>{address.name}</h3>
                     <p>{address.address}</p>
-                    <p>{address.city}, {address.state} - {address.pincode}</p>
+                    <p>
+                      {address.city}, {address.state} - {address.pincode}
+                    </p>
                     <p>Phone: {address.phone}</p>
-                    
+
                     <div className="address-actions">
                       <button className="btn-edit-address">Edit</button>
                       <button className="btn-delete-address">Delete</button>
                       {!address.isDefault && (
-                        <button className="btn-set-default">Set as Default</button>
+                        <button className="btn-set-default">
+                          Set as Default
+                        </button>
                       )}
                     </div>
                   </div>
                 ))}
-                
+
                 <div className="add-address-card">
                   <i className="fas fa-plus"></i>
                   <p>Add a new address</p>
@@ -287,11 +321,11 @@ const Profile = () => {
               </div>
             </div>
           )}
-          
-          {activeTab === 'wishlist' && (
+
+          {activeTab === "wishlist" && (
             <div className="wishlist-section">
               <h2>My Wishlist</h2>
-              
+
               <div className="empty-state">
                 <i className="fas fa-heart"></i>
                 <p>Your wishlist is empty.</p>

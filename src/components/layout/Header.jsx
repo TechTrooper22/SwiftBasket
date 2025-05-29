@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
-import { useCart } from '../../contexts/CartContext';
-import './Header.css';
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { useCart } from "../../contexts/CartContext";
+import "./Header.css";
 
 const Header = () => {
   const { currentUser, logout } = useAuth();
   const { cartItems } = useCart();
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +15,10 @@ const Header = () => {
   const userDropdownRef = useRef(null);
   const moreDropdownRef = useRef(null);
 
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -27,9 +30,9 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      console.error('Failed to log out', error);
+      console.error("Failed to log out", error);
     }
   };
 
@@ -50,17 +53,23 @@ const Header = () => {
   // Handle clicks outside dropdowns
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
+      if (
+        userDropdownRef.current &&
+        !userDropdownRef.current.contains(event.target)
+      ) {
         setShowUserDropdown(false);
       }
-      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target)) {
+      if (
+        moreDropdownRef.current &&
+        !moreDropdownRef.current.contains(event.target)
+      ) {
         setShowMoreDropdown(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -149,7 +158,17 @@ const Header = () => {
                     className="fas fa-shopping-cart"
                   ></i>
                   {cartItemCount > 0 && (
-                    <span className="cart-count">{cartItemCount}</span>
+                    <span
+                      className="cart-count"
+                      style={{
+                        color: "white",
+                        fontSize: "12px",
+                        backgroundColor: "black",
+                        padding: "8px",
+                      }}
+                    >
+                      {cartItemCount}
+                    </span>
                   )}
                 </div>
                 <span style={{ color: "white", fontSize: "20px" }}>Cart</span>
