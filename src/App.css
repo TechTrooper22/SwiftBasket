@@ -1,0 +1,17 @@
+/* App specific styles */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 56px; /* Height of fixed header */
+}
+
+@media (min-width: 769px) {
+  .main-content {
+    padding-top: 64px;
+  }
+}

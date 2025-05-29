@@ -1,0 +1,137 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 56px);
+  padding: var(--spacing-xl) 0;
+  background-color: var(--background-light);
+}
+
+.register-container {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--white);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.register-left {
+  width: 40%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.register-left h2 {
+  font-size: 28px;
+  margin-bottom: var(--spacing-md);
+}
+
+.register-left p {
+  margin-bottom: var(--spacing-xl);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.register-left img {
+  margin-top: auto;
+  max-width: 100%;
+}
+
+.register-right {
+  width: 60%;
+  padding: var(--spacing-xl);
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: var(--error-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.register-terms {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.register-terms a {
+  color: var(--primary-color);
+}
+
+.register-btn {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #e05713;
+}
+
+.register-btn:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  font-size: 14px;
+}
+
+.login-link a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  .register-left,
+  .register-right {
+    width: 100%;
+  }
+  
+  .register-left {
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .register-left img {
+    display: none;
+  }
+}

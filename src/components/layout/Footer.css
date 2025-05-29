@@ -1,0 +1,116 @@
+.footer {
+  background-color: var(--text-color);
+  color: var(--white);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  margin-top: var(--spacing-xxl);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-section h3 {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-section ul li a {
+  color: var(--white);
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.contact-section address {
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+}
+
+.contact-section p {
+  font-size: 14px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-section a {
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.contact-section a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+}
+
+.payment-methods p {
+  margin-right: var(--spacing-md);
+  font-size: 14px;
+}
+
+.payment-icons {
+  display: flex;
+}
+
+.payment-icons i {
+  font-size: 24px;
+  margin-right: var(--spacing-md);
+  color: var(--white);
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .payment-methods {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
