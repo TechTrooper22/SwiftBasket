@@ -83,7 +83,12 @@ const Header = () => {
 
           <div>
             <Link to="/" className="logo-class">
-              <img className="logo-img" src="/favicon.png" alt="SwiftBasket" />
+              <img
+                className="logo-img"
+                src="https://cdnl.iconscout.com/lottie/premium/thumb/shopping-cart-6357142-5283108.gif"
+                alt="SwiftBasket"
+                width={"90px"}
+              />
               <h2 className="logo-name">SwiftBasket</h2>
             </Link>
           </div>
